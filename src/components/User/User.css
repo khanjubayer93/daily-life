@@ -1,0 +1,40 @@
+
+.img{
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.user-info{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+.user-name{
+    margin-bottom: 0px;
+    color: white;
+}
+.location{
+    margin-top: 0px;
+    color: white;
+}
+.weight{
+    font-size: 25px;
+    font-weight: bold;
+}
+.user-about{
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 10px;   
+}
+.add-break{
+    color: white;
+}
+.break-time{
+    display: flex;
+    justify-content: space-between;
+}
+.break-btn{
+    padding: 10px;
+    border-radius: 50px;
+}

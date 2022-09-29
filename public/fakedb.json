@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "picture": "https://cutt.ly/JVKuUMX",
+        "time": 25,
+        "name": "Say Salat"
+    },
+    {
+        "id": "2",
+        "picture": "https://cutt.ly/TVKuEly",
+        "time": 24,
+        "name": "Reading Quran"
+    },
+    {
+        "id": "3",
+        "picture": "https://cutt.ly/wVKuvOT",
+        "time": 21,
+        "name": "Reading Book"
+    },
+    {
+        "id": "4",
+        "picture": "https://i.ibb.co/SxjnzMS/programming-languages-1-1024x683.jpg",
+        "time": 600,
+        "name": "Programing"
+    },
+    {
+        "id": "5",
+        "picture": "https://cutt.ly/nVKu9pO",
+        "time": 21,
+        "name": "Cycling"
+    },
+    {
+        "id": "6",
+        "picture": "https://cutt.ly/OVKic7R",
+        "time": 22,
+        "name": "Swimming"
+    }
+]
