@@ -8,12 +8,17 @@ import User from '../User/User';
 
 const Home = () => {
     const [works, setWorks] = useState([])
-    console.log(works)
+    // console.log(works)
     useEffect(() => {
         fetch(`fakedb.json`)
             .then(res => res.json())
             .then(data => setWorks(data))
     }, [])
+
+    const handleAddToList =()=>{
+        console.log('btn added');
+    }
+    
     return (
         <div className='home-container'>
             <div>
@@ -27,7 +32,8 @@ const Home = () => {
                         {
                             works.map(work => <Work
                                 key={work.id}
-                                work={work}></Work>)
+                                work={work}
+                                handleAddToList={handleAddToList}></Work>)
                         }
                     </div>
                 </div>
