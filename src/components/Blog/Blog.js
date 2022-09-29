@@ -11,14 +11,20 @@ const Blog = () => {
                     Although React was conceived to be used in the browser, because of its design it can also be used in the server with Node.js. </p>
             </div>
             <div>
-                <h3>Q 01. </h3>
+                <h3>Q 02. what is the difference between props and state?</h3>
+                <p>props:
+                    Props (short for properties) are a Component's configuration. They are received from above and immutable as far as the Component receiving them is concerned. A Component cannot change its props, but it is responsible for putting together the props of its child Components. Props do not have to just be data -- callback functions may be passed in as props.
+
+                    state:
+                    The state is a data structure that starts with a default value when a Component mounts. It may be mutated across time, mostly as a result of user events.
+
+                    A Component manages its own state internally. Besides setting an initial state, it has no business fiddling with the state of its children. You might conceptualize state as private to that component.</p>
             </div>
             <div>
-                <h3>Q 01. </h3>
+                <h3>Q 03. Where uses useeffect?</h3>
+                <p>useEffect() is for side-effects. A functional React component uses props and/or state to calculate the output. If the functional component makes calculations that don't target the output value, then these calculations are named side-effects.</p>
             </div>
-            <div>
-                <h3>Q 01. </h3>
-            </div>
+            
         </div>
     );
 };
