@@ -6,8 +6,8 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 const User = (props) => {
-    const [rest, setRest] = useState([])
-    // console.log(rest);
+    const [rest, setRest] = useState(0)
+    console.log(rest);
 
     const { activity } = props;
     let minute = 0;
@@ -16,16 +16,11 @@ const User = (props) => {
     }
 
     const breakBtnHandler = (breakTime) => {
-        const restTime = [...rest, breakTime]
-        setRest(restTime)
+        console.log(breakTime)
+        setRest(breakTime)
 
     }
-    let totalBreakTime = 0;
-    for (const brTime of rest) {
-        totalBreakTime = totalBreakTime + brTime;
-        console.log(totalBreakTime);
-    }
-
+    
 
     return (
         <div>
@@ -66,7 +61,7 @@ const User = (props) => {
                     <h3>Activity Time: {minute}m</h3>
                 </div>
                 <div className='activity-time'>
-                    <h3>Break Time: {totalBreakTime}</h3>
+                    <h3>Break Time: {rest}</h3>
                 </div>
 
             </div>
