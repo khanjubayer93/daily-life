@@ -3,17 +3,29 @@ import './User.css';
 import user from '../../image/user.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
 const User = (props) => {
+    const [rest, setRest] = useState([])
+    // console.log(rest);
+
     const { activity } = props;
     let minute = 0;
-    for (const time of activity){
+    for (const time of activity) {
         minute = minute + time;
     }
-        
-    const breakBtnHandler=(breakTime)=>{
-        console.log(breakTime);
+
+    const breakBtnHandler = (breakTime) => {
+        const restTime = [...rest, breakTime]
+        setRest(restTime)
+
     }
+    let totalBreakTime = 0;
+    for (const brTime of rest) {
+        totalBreakTime = totalBreakTime + brTime;
+        console.log(totalBreakTime);
+    }
+
 
     return (
         <div>
@@ -42,7 +54,7 @@ const User = (props) => {
             </div>
             <h3 className='add-break'>Add A Break</h3>
             <div className='break-time'>
-                <div><button onClick={()=>breakBtnHandler(5)}className='break-btn'>5m</button></div>
+                <div><button onClick={() => breakBtnHandler(5)} className='break-btn'>5m</button></div>
                 <div><button onClick={() => breakBtnHandler(10)} className='break-btn'>10m</button></div>
                 <div><button onClick={() => breakBtnHandler(15)} className='break-btn'>15m</button></div>
                 <div><button onClick={() => breakBtnHandler(20)} className='break-btn'>20m</button></div>
@@ -54,7 +66,7 @@ const User = (props) => {
                     <h3>Activity Time: {minute}m</h3>
                 </div>
                 <div className='activity-time'>
-                    <h3>Break Time: {10}</h3>
+                    <h3>Break Time: {totalBreakTime}</h3>
                 </div>
 
             </div>
