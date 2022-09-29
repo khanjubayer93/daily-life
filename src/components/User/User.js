@@ -4,7 +4,17 @@ import user from '../../image/user.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
-const User = () => {
+const User = (props) => {
+    const { activity } = props;
+    let minute = 0;
+    for (const time of activity){
+        minute = minute + time;
+    }
+        
+    const breakBtnHandler=(breakTime)=>{
+        console.log(breakTime);
+    }
+
     return (
         <div>
             <div className='user-info'>
@@ -32,19 +42,19 @@ const User = () => {
             </div>
             <h3 className='add-break'>Add A Break</h3>
             <div className='break-time'>
-                <div><button className='break-btn'>5m</button></div>
-                <div><button className='break-btn'>10m</button></div>
-                <div><button className='break-btn'>15m</button></div>
-                <div><button className='break-btn'>20m</button></div>
-                <div><button className='break-btn'>25m</button></div>
+                <div><button onClick={()=>breakBtnHandler(5)}className='break-btn'>5m</button></div>
+                <div><button onClick={() => breakBtnHandler(10)} className='break-btn'>10m</button></div>
+                <div><button onClick={() => breakBtnHandler(15)} className='break-btn'>15m</button></div>
+                <div><button onClick={() => breakBtnHandler(20)} className='break-btn'>20m</button></div>
+                <div><button onClick={() => breakBtnHandler(25)} className='break-btn'>25m</button></div>
             </div>
             <h3 className='add-break'>Activity Details</h3>
             <div>
                 <div className='activity-time'>
-                    <h3>Activity Time: { 20}minute</h3>
+                    <h3>Activity Time: {minute}m</h3>
                 </div>
                 <div className='activity-time'>
-                    <h3>Break Time: { 20}minute</h3>
+                    <h3>Break Time: {10}</h3>
                 </div>
 
             </div>

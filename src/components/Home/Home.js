@@ -8,17 +8,21 @@ import User from '../User/User';
 
 const Home = () => {
     const [works, setWorks] = useState([])
-    // console.log(works)
+
+    const [activity, setActivity] = useState([])
+    
     useEffect(() => {
         fetch(`fakedb.json`)
             .then(res => res.json())
             .then(data => setWorks(data))
     }, [])
 
-    const handleAddToList =()=>{
-        console.log('btn added');
+    const handleAddToList = (work) => {
+        const worktime = work.time;
+        const newActivity = [...activity, worktime]
+        setActivity(newActivity)
     }
-    
+
     return (
         <div className='home-container'>
             <div>
@@ -40,7 +44,7 @@ const Home = () => {
 
             </div>
             <div className='user-container'>
-                <User></User>
+                <User activity={activity}></User>
             </div>
         </div>
     );
